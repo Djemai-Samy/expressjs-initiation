@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "7d3adb4c-400b-496c-8aad-7f0284387d3c",
+		"name": "3. Routes avec paramètres",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "8920217-7d3adb4c-400b-496c-8aad-7f0284387d3c"
+	},
+	"item": [
+		{
+			"name": "Article 1",
+			"id": "2a48dd6a-435d-430c-aebc-415022aea9c5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3001/articles/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"articles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Article 2",
+			"id": "544a94bd-5fba-4c50-883c-a7bf6df4c13d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3001/articles/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"articles",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 1 book 2",
+			"id": "c81f7b29-a5af-4899-8e1c-ea103a718d84",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3001/users/1/books/2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"1",
+						"books",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User 1 book 3",
+			"id": "c1324852-d7ba-4f0d-bbb0-f2e85e2894f0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3001/users/1/books/3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"users",
+						"1",
+						"books",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
