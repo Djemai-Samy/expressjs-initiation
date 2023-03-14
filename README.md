@@ -18,14 +18,25 @@ Vous allez découvrir comment installer et configurer une application ExpressJS,
 2. [ExpressJS: Les Routes](https://djemai-samy.com/posts/2.expressjs-routes.article)
 3. [ExpressJS: Les middlewares](https://djemai-samy.com/posts/3.react-middlewares.article)
 
-## Branches
+## Branches sur GitHub
 
-Chaque article à comme point de départ la branche **main** et possèdent tous une branche sur le dépot, contenant le code finale etcomplet de l'article:
+Chaque article à comme point de départ la branche **main** et possèdent tous une branche sur le dépot, contenant le code finale et complet de l'article:
 
 - [main](https://github.com/Djemai-Samy/expressjs-initiation)
 - [1-introduction](https://github.com/Djemai-Samy/expressjs-initiation/tree/1-introduction)
 - [2-routes](https://github.com/Djemai-Samy/expressjs-initiation/tree/2-routes)
 - [3-middlewares](https://github.com/Djemai-Samy/expressjs-initiation/tree/3-middlewares)
+
+---
+
+## Branches sur GitLab
+
+Chaque article à comme point de départ la branche **main** et possèdent tous une branche sur le dépot, contenant le code finale et complet de l'article:
+
+- [main](https://gitlab.com/tutoriels-dev/expressjs/expressjs-initiation/1.expressjs-initiation/-/tree/main)
+- [1-introduction](https://gitlab.com/tutoriels-dev/expressjs/expressjs-initiation/1.expressjs-initiation/-/tree/1-introduction)
+- [2-routes](https://gitlab.com/tutoriels-dev/expressjs/expressjs-initiation/1.expressjs-initiation/-/tree/2-routes)
+- [3-middlewares](https://gitlab.com/tutoriels-dev/expressjs/expressjs-initiation/1.expressjs-initiation/-/tree/3-middlewares)
 
 ---
 
