@@ -22,14 +22,25 @@ Nous allons aussi installer et configurer un projet basique avec ExpressJS.
 
 ---
 
-## Branches
+## Branches sur GitHub
 
-Chaque article à comme point de départ la branche **main** et possèdent tous une branche sur le dépot, contenant le code finale etcomplet de l'article:
+Chaque article à comme point de départ la branche **main** et possèdent tous une branche sur le dépot, contenant le code finale et complet de l'article:
 
 - [main](https://github.com/Djemai-Samy/expressjs-initiation)
 - [1-introduction](https://github.com/Djemai-Samy/expressjs-initiation/tree/1-introduction)
 - [2-routes](https://github.com/Djemai-Samy/expressjs-initiation/tree/2-routes)
 - [3-middlewares](https://github.com/Djemai-Samy/expressjs-initiation/tree/3-middlewares)
+
+---
+
+## Branches sur GitLab
+
+Chaque article à comme point de départ la branche **main** et possèdent tous une branche sur le dépot, contenant le code finale et complet de l'article:
+
+- [main](https://gitlab.com/tutoriels-dev/expressjs/expressjs-initiation/1.expressjs-initiation/-/tree/main)
+- [1-introduction](https://gitlab.com/tutoriels-dev/expressjs/expressjs-initiation/1.expressjs-initiation/-/tree/1-introduction)
+- [2-routes](https://gitlab.com/tutoriels-dev/expressjs/expressjs-initiation/1.expressjs-initiation/-/tree/2-routes)
+- [3-middlewares](https://gitlab.com/tutoriels-dev/expressjs/expressjs-initiation/1.expressjs-initiation/-/tree/3-middlewares)
 
 ---
 
@@ -44,28 +55,6 @@ Chaque article à comme point de départ la branche **main** et possèdent tous 
 
 ---
 
-## Mise en place de l'environnement
-
-Vous pouvez commencer à suivre le cours en clonant le branche **main**:
-
-```bash
-git clone https://github.com/Djemai-Samy/expressjs-initiation.git
-```
-
-```bash
-cd ./expressjs-initiation
-```
-
-```bash
-npm install
-```
-
-```bash
-npm run dev
-```
-
----
-
 ## Déscription
 
 **ExpressJS** est une **librairie JavaScript open-source** pour la **création** d'applications web.
@@ -73,6 +62,8 @@ npm run dev
 Elle est **utilisée** pour la **création** de **serveurs web**, la **gestion** des **routes** et des **middleware**, la **génération de vues dynamiques**...
 
 **ExpressJS** est **largement utilisé** dans le **développement web** pour sa **simplicité**, et sa **flexibilité**.
+
+---
 
 ## Prérequis
 
@@ -85,7 +76,9 @@ Pour **installer ExpressJS**, vous devez d'abord **installer Node.js**, qui est 
 
 Node.js est **utilisé** pour **exécuter** du **code JavaScript** côté **serveur**:
 
-[**Tutoriel pour installer NodeJS sur une machine.**](https://djemai-samy.com/posts/1.nodejs-introduction.article#Comment installer Node.js ?)
+[**Tutoriel pour installer NodeJS sur une machine.**](https://djemai-samy.com/posts/1.nodejs-introduction.article)
+
+---
 
 ## Qu'est-ce qu'ExpressJS ?
 
@@ -97,7 +90,7 @@ La **librairie** s'appuie sur les **fonctionnalités** de base du **module** `ht
 
 ---
 
-## Pourquoi utiliser ExpressJS ?" level={0}>
+## Pourquoi utiliser ExpressJS ?
 
 Voici les **fonctionnalités clés** d'ExpressJS :
 
@@ -114,7 +107,7 @@ Voici les **fonctionnalités clés** d'ExpressJS :
 
 ---
 
-## Installationd'ExpressJS
+## Installation d'ExpressJS
 
 ### 1. Initialiser un projet npm
 
@@ -167,7 +160,7 @@ node app.js
 
 ---
 
-### Configurer le projet" level={0}>
+### Configurer le projet
 
 ### Utiliser les modules
 
