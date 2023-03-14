@@ -228,20 +228,20 @@ const app = express();
 
 // Route GET sur l'url /exemple
 app.get("/example", function (req, res) {
-	// Afficher un méssage dans la console quand une raquête est interceptée
-	console.log("Une requête GET est reçue sur /exemple");
+ // Afficher un méssage dans la console quand une raquête est interceptée
+ console.log("Une requête GET est reçue sur /exemple");
 
-	//Envoyer un message dans la réponse
-	res.send("Hello world!");
+ //Envoyer un message dans la réponse
+ res.send("Hello world!");
 });
 
 // Lancer le serveur sur le port 3000
 app.listen(3000, function () {
-	console.log("Example app listening on port 3001!");
+ console.log("Example app listening on port 3001!");
 });
 ```
 
-Vous pouvez **tester votre serveur** de plusieurs manières par exemple en utilisant **des logiciels graphiques** comme <a href="https://www.postman.com/" taget="_blank">**Postman, qui permet de tester vos API facilement**.</a>
+Vous pouvez **tester votre serveur** de plusieurs manières par exemple en utilisant **des logiciels graphiques** comme [**Postman, qui permet de tester vos API facilement**](https://www.postman.com/)
 
 ![Exemple de teste de la requete HTTP envoyé avec Postman sur la route /exemple d'une application expressjs.](https://djemai-samy.com/blog/2.programmation/2.server/4.expressjs/0.expressjs-initiation/2.expressjs-routes/3.expressjs-routes-exemple.png)
 
@@ -269,14 +269,14 @@ Nous **utilisons** ensuite cette **valeur** pour **afficher** le nom réçues da
 ```js
 // Déclaration de la route avec un query name 'name'
 app.get("/hello", function (req, res) {
-	// Récupération de la valeur du query name 'name' avec la méthode req.query
-	var name = req.query.name;
+ // Récupération de la valeur du query name 'name' avec la méthode req.query
+ var name = req.query.name;
 
-	// Utilisation de la valeur récupérée pour la réponse
-	console.log("Hello " + name + "!");
+ // Utilisation de la valeur récupérée pour la réponse
+ console.log("Hello " + name + "!");
 
-	// Envoyer la réponse avec le nom réçu dans le query
-	res.send("Hello " + name + "!");
+ // Envoyer la réponse avec le nom réçu dans le query
+ res.send("Hello " + name + "!");
 });
 ```
 
@@ -313,15 +313,15 @@ Puis nous **utilisons** l'objet `res` pour **définir** le code de statut `HTTP`
 
 ```js
 app.get("/hello", function (req, res) {
-	// Récupération de la valeur 'name' ave req.query
-	const name = req.query.name;
+ // Récupération de la valeur 'name' ave req.query
+ const name = req.query.name;
 
-	// Envoyer la réponse avec le nom réçu dans le query
-	res.status(200).send(`Hello ${name}!`);
+ // Envoyer la réponse avec le nom réçu dans le query
+ res.status(200).send(`Hello ${name}!`);
 });
 ```
 
-Par exemple, si un client **effectue** une **requête** `GET` à l'**URL** `/hello?name=John`**, la **valeur** de `name` sera **récupérée** et **utilisée** pour **répondre** avec le **message** `Hello John!`**.
+Par exemple, si un client **effectue** une **requête** `GET` à l'**URL** `/hello?name=John`**, la**valeur**de `name` sera**récupérée**et**utilisée**pour**répondre**avec le**message**`Hello John!`**.
 
 ---
 
@@ -343,9 +343,9 @@ Lorsque l'utilisateur **accède** à cette **URL**, la fonction est **exécutée
 
 ```js
 app.get("/articles/:id", function (req, res) {
-	//Récuperer le paramètre dans l'url
-	const id = req.params.id;
-	res.send("Article ID est : " + id);
+ //Récuperer le paramètre dans l'url
+ const id = req.params.id;
+ res.send("Article ID est : " + id);
 });
 ```
 
@@ -355,7 +355,7 @@ Exemple d'une route qui utilise deux paramètres
 
 ```js
 app.get("/users/:id/books/:bookId", function (req, res) {
-	res.send("User ID is " + req.params.id + " and Book ID is " + req.params.bookID);
+ res.send("User ID is " + req.params.id + " and Book ID is " + req.params.bookID);
 });
 ```
 
@@ -380,20 +380,20 @@ Pour **ajouter une tâche** le client doit **envoyer une requête** `POST` sur l
 ```js
 // Ajouter une tache à la liste
 app.post("/tasks", (req, res) => {
-	// Aficher les informations de la requête dans la console
-	console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+ // Aficher les informations de la requête dans la console
+ console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
 
-	// Recupérer la tache dans le query de la requête
-	const newTask = req.query.task;
+ // Recupérer la tache dans le query de la requête
+ const newTask = req.query.task;
 
-	// Vérifier que le query task a été fournit
-	if (!newTask) return res.status(400).json({ message: "query task required" });
+ // Vérifier que le query task a été fournit
+ if (!newTask) return res.status(400).json({ message: "query task required" });
 
-	// Ajouter la tache dans la liste
-	tasks.push(newTask);
+ // Ajouter la tache dans la liste
+ tasks.push(newTask);
 
-	//Repondre en JSON avec un objet contenant la liste de taches
-	return res.status(200).json({ tasks });
+ //Repondre en JSON avec un objet contenant la liste de taches
+ return res.status(200).json({ tasks });
 });
 ```
 
@@ -416,11 +416,11 @@ Pour **récuperer toutes les tâches**, le client doit **envoyer une requête** 
 ```js
 // Récuperer toutes les tâches
 app.get("/tasks", (req, res) => {
-	// Aficher les informations de la requête dans la console
-	console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+ // Aficher les informations de la requête dans la console
+ console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
 
-	// Envoyer une reponse en JSON contenant la liste de taches
-	return res.status(200).json({ tasks });
+ // Envoyer une reponse en JSON contenant la liste de taches
+ return res.status(200).json({ tasks });
 });
 ```
 
@@ -437,29 +437,29 @@ Pour **mettre à jour une tâche**, le client doit **envoyer une requête** `PUT
 ```js
 // Modifier une tache
 app.put("/tasks/:id", (req, res) => {
-	// Aficher les informations de la requête dans la console
-	console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+ // Aficher les informations de la requête dans la console
+ console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
 
-	// Récuperer et convertir l'id dans les paramètre de la requête
-	const id = Number(req.params.id);
+ // Récuperer et convertir l'id dans les paramètre de la requête
+ const id = Number(req.params.id);
 
-	// Vérifier que l'id fournit est bien un nombre sinon reponse 400
-	if (isNaN(id)) return res.status(400).json({ message: "Identifiant invalide" });
+ // Vérifier que l'id fournit est bien un nombre sinon reponse 400
+ if (isNaN(id)) return res.status(400).json({ message: "Identifiant invalide" });
 
-	// Vérifier que l'id est trouvable sinon reponse 404
-	if (!tasks[id]) return res.status(404).json({ message: "Tache introuvable" });
+ // Vérifier que l'id est trouvable sinon reponse 404
+ if (!tasks[id]) return res.status(404).json({ message: "Tache introuvable" });
 
-	// Récuperer la nouvelle tache
-	const updatedTask = req.query.task;
+ // Récuperer la nouvelle tache
+ const updatedTask = req.query.task;
 
-	// Vérifier que l'id fournit est bien un nombre sinon reponse 400
-	if (!updatedTask) return res.status(400).json({ message: "query task required" });
+ // Vérifier que l'id fournit est bien un nombre sinon reponse 400
+ if (!updatedTask) return res.status(400).json({ message: "query task required" });
 
-	// Mettre a jour la tache dans la liste
-	tasks[id] = updatedTask;
+ // Mettre a jour la tache dans la liste
+ tasks[id] = updatedTask;
 
-	//Envoyé une réponse en JSON avec la liste de tâche mise à jour
-	return res.status(200).json({ tasks });
+ //Envoyé une réponse en JSON avec la liste de tâche mise à jour
+ return res.status(200).json({ tasks });
 });
 ```
 
@@ -491,23 +491,23 @@ Pour **supprimer une tâche**, le client doit **envoyer une requête** `DELETE` 
 ```js
 // Supprimer une tache
 app.delete("/tasks/:id", (req, res) => {
-	// Aficher les informations de la requête dans la console
-	console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+ // Aficher les informations de la requête dans la console
+ console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
 
-	// Récuperer et convertir l'id dans les paramètre de la requête
-	const id = Number(req.params.id);
+ // Récuperer et convertir l'id dans les paramètre de la requête
+ const id = Number(req.params.id);
 
-	// Vérifier que l'id fournit est bien un nombre sinon reponse 400
-	if (isNaN(id)) return res.status(400).json({ message: "Identifiant invalide" });
+ // Vérifier que l'id fournit est bien un nombre sinon reponse 400
+ if (isNaN(id)) return res.status(400).json({ message: "Identifiant invalide" });
 
-	// Vérifier que l'id est trouvable sinon reponse 404
-	if (!tasks[id]) return res.status(404).json({ message: "Tache introuvable" });
+ // Vérifier que l'id est trouvable sinon reponse 404
+ if (!tasks[id]) return res.status(404).json({ message: "Tache introuvable" });
 
-	// Mettre a jour la tache dans la liste
-	tasks.splice(id, 1);
+ // Mettre a jour la tache dans la liste
+ tasks.splice(id, 1);
 
-	//Envoyé une réponse en JSON avec la nouvelle tache
-	return res.status(200).json({ tasks });
+ //Envoyé une réponse en JSON avec la nouvelle tache
+ return res.status(200).json({ tasks });
 });
 ```
 
