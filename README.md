@@ -1,14 +1,14 @@
-# 1/ ExpresJS: Introduction
+# 1/ ExpresJS: Les Routes
 
-## [Page officiel du cours ExpressJS: Initiation](https://djemai-samy.com/posts/1.expressjs-introduction.article)
+## [Page officiel du cours ExpressJS: Initiation](https://djemai-samy.com/posts/2.expressjs-routes.article)
 
-![Image du cours: ExpresJS: Introduction](https://djemai-samy.com/blog/2.programmation/2.server/4.expressjs/0.expressjs-initiation/1.expressjs-introduction/1.expressjs-introduction.png)
+![Image du cours: ExpresJS: Les Routes](https://djemai-samy.com/blog/2.programmation/2.server/4.expressjs/0.expressjs-initiation/1.expressjs-introduction/2.expressjs-routes.png)
 
 La branche 'main' contient le code de départ de chaque chapitre de la série de cours.
 
-Dans ce chapitre, nous allons découvrir ce qu'est ExpressJS, explorer les fonctionnalités clés d'ExpressJS et comprendre pourquoi il est si largement utilisé dans le développement web.
+Avec ExpressJS, les routes sont une des ses principales fonctionnalités, car elle permettent de prépondre aux clients différament suivant l'URL, la méthode de la raquête HTTP.
 
-Nous allons aussi installer et configurer un projet basique avec ExpressJS.
+Dans ce chapitre, nous allons **explorer les différentes manières de créer des routes** avec ExpressJS, allant des routes les plus simples aux plus avancées.
 
 ---
 
@@ -44,6 +44,40 @@ Chaque article à comme point de départ la branche **main** et possèdent tous 
 
 ---
 
+## Mise en place de l'environnement
+
+Vous pouvez commencer à suivre le cours en clonant le branche **main** avec GitHub:
+
+```bash
+git clone https://github.com/Djemai-Samy/expressjs-initiation.git
+```
+
+ou avec GitLab:
+
+```bash
+git clone https://gitlab.com/tutoriels-dev/expressjs/expressjs-initiation/1.expressjs-initiation/-/tree/main
+```
+
+Une fois cloné, vous pouver vous déplacez dans la nouveau dossier:
+
+```bash
+cd ./expressjs-initiation
+```
+
+Installer les dépendances:
+
+```bash
+npm install
+```
+
+Et lancé le serveur en mode développement
+
+```bash
+npm run dev
+```
+
+---
+
 ## Objectifs
 
 À la fin de ce chapitre, vous serez en mesure de :
@@ -71,182 +105,9 @@ Pour **suivre** ce chapitre, vous devez **avoir** une bonne **compréhension** d
 
 1. [**_Initiation au language Javascript_**](https://djemai-samy.com/posts/0.javascript-initiation)
 2. [**Initiation à la programmation serveur avec NodeJS.**](https://djemai-samy.com/posts/0.nodejs-initiation)
-
-Pour **installer ExpressJS**, vous devez d'abord **installer Node.js**, qui est une **plateforme logicielle** basée sur **JavaScript**.
-
-Node.js est **utilisé** pour **exécuter** du **code JavaScript** côté **serveur**:
-
-[**Tutoriel pour installer NodeJS sur une machine.**](https://djemai-samy.com/posts/1.nodejs-introduction.article)
+3. [**Introduction a ExpressJS.**](https://djemai-samy.com/posts/2.nodejs-introduction)
 
 ---
-
-## Qu'est-ce qu'ExpressJS ?
-
-**ExpressJS** est **devenu** l'une des **librairies** les **plus populaires** pour la **création** d'**applications web**, en grande partie en raison de sa **simplicité** et de sa **flexibilité**.
-
-La **librairie** s'appuie sur les **fonctionnalités** de base du **module** `http` de **Node.js** et permet aux développeurs de **construire** des applications web **rapidement** et **facilement** en utilisant des **outils** et des **méthodes** simples et bien **documentées**.
-
-**ExpressJS** fournit également un ensemble de **middleware intégrés** pour la **gestion** des **requêtes** et des **réponses** `HTTP`, ainsi que la possibilité d'**implémenter** des **middlewares personalisés**.
-
----
-
-## Pourquoi utiliser ExpressJS ?
-
-Voici les **fonctionnalités clés** d'ExpressJS :
-
-- **Gestion des routes** : ExpressJS permet aux développeurs de **définir des routes** pour leurs applications web en **utilisant des méthodes HTTP** telles que `GET`, `POST`, `PUT`, `DELETE`, etc.
-
-- **Middleware** : ExpressJS fournit un ensemble de **middleware intégrés** pour la **gestion** des **requêtes** et des **réponses** `HTTP`.
-  Les développeurs **peuvent** également **créer** leur propre **middleware personnalisé**.
-
-- **Gestion des templates** : ExpressJS prend en charge un certain nombre de **moteurs de templates** pour **générer** des **vues dynamiques** pour les applications web.
-
-- **Gestion des erreurs** et **des exceptions** : ExpressJS permet aux développeurs de **gérer** les **erreurs** et les **exceptions** de manière centralisée pour **améliorer** la qualité de l'application et **faciliter** la maintenance.
-
-- **Sécurité** : ExpressJS fournit une **série d'outils** pour **améliorer la sécurité** de l'application, notamment la **gestion des cookies** et des **sessions utilisateur**, la **validation** des **entrées utilisateur**, etc.
-
----
-
-## Installation d'ExpressJS
-
-### 1. Initialiser un projet npm
-
-Avant de pouvoir **installer les librairies nécessaires**, nous devons d'abords **initialiser un projet NodeJS**.
-
-Pour **initialiser** un projet avec **NodeJS**, ouvrez une **console de commande** dans le **répertoire désiré** et **entrez** la \*_commande_ suivante\* :
-
-```bash
-npm init
-```
-
-Une **série de questions** sera **affichée** dans le **terminal** pour **configurer** votre projet, ensuite **vérifiez** que le fichier `package.json` a bien été **créé**.
-
----
-
-### 2. Installer ExpressJS
-
-Vous pouvez maintenant **installer ExpressJS** en utilisant le **gestionnaire de paquets** `npm` (Node Package Manager), **inclus** avec **Node.js**.
-
-Il suffit de **lancez** dans **console** la **commande suivante** :
-
-```bash
-npm install express
-```
-
----
-
-## Lancer le serveur
-
-Maintenant que la **librairie** est **installée**, nous pouvons **implémenter** le **script** qui **lancera le serveur** `HTTP` sur le **port désiré**.
-
-**Créer** un **fichier** dans le **répertoire**.
-
-Par **convention**, nous allons **nommée** le **fichier**: `app.js`:
-
-```js
-const express = require("express");
-const app = express();
-
-app.listen(3001, function () {
-	console.log("Serveur lancé sur le port 3001!");
-});
-```
-
-Vous pouvez maintenant **executer** le **script** en **lançant** dans **console** la **commande suivante** :
-
-```bash
-node app.js
-```
-
----
-
-### Configurer le projet
-
-### Utiliser les modules
-
-Si vous voulez **utiliser** les **modules Javascript** pour les **imports** et **exports**, vous pouvez **ajouter** à la **racine du fichier** `package.json`:
-
-```json
-"type":"module"
-```
-
-Vous pouvez maintenant **importer** `express` dans votre **script** de cette manière:
-
-```js
-import express from "express";
-```
-
----
-
-### Nodemon
-
-Lorsque vous **développez** une application **Express.js**, vous **écrivez** généralement du code dans des **fichiers JavaScript** qui sont ensuite **exécutés** à l'aide de **Node.js**.
-
-Lorsque vous **apportez** des **modifications** à ces fichiers, vous devez **redémarrer manuellement** le serveur Node.js pour **voir les changements**.
-
-Cela peut être **fastidieux**, surtout si vous apportez **fréquemment des modifications** à votre code.
-
-Nodemon est un **outil** qui **facilite le développement** d'applications Node.js en **surveillant** les **modifications** de fichiers dans un projet et en **redémarrant automatiquement** l'application lorsque des **modifications sont détectées**.
-
-Cela vous permet de **gagner** du temps et d'**augmenter** votre **productivité** en vous **évitant** de devoir **redémarrer** le serveur **manuellement** à chaque **modification**.
-
-Pour **utiliser** `nodemon` avec **Express.js**, vous pouvez simplement **installer** Nodemon en tant que **dépendance de développement** dans votre projet.
-
-```bash
-npm install nodemon --save-dev
-```
-
-Puis **remplacer** la **commande** `node` par `nodemon` pour **exécuter** votre application.
-
-```bash
-npx nodemon app.js
-```
-
----
-
-### Scripts
-
-Lorsque vous travaillez avec Node.js et `npm` (le gestionnaire de paquets de Node.js), vous **utilisez** souvent un **fichier** appelé `package.json` pour **décrire** les **dépendances** de votre **projet**, sa version, etc.
-
-Mais vous pouvez également y **ajouter** des **scripts personnalisés** pour **automatiser** certaines **tâches courantes** ou **complexes**.
-
-**Les scripts personnalisés** sont des **commandes** que vous pouvez **exécuter** via la commande `npm run [nom du script]` dans le **terminal**.
-
-Ils sont **utiles** pour **automatiser** des **tâches** telles que la **compilation** de code, l'**exécution** de **tests**, la **génération** de documentation, la **configuration** de l'environnement de développement, etc.
-
-Nous pouvons par exemple **ajouter** deux **script personnalisés** afin de **lancer** le serveur en **mode développement** avec `nodemon`, et de **lancer** le serveur en **mode production** avec `node`.
-
-Voici le fichier complet:
-
-```json
-{
-	"name": "expressjs-initiation",
-	"version": "1.0.0",
-	"type": "module",
-	"scripts": {
-		"start": "node server.js",
-		"dev": "nodemon server.js"
-	},
-	"dependencies": {
-		"express": "^4.17.1"
-	},
-	"devDependencies": {
-		"nodemon": "^2.0.21"
-	}
-}
-```
-
-Vous pouvez maitenant **executer** cette **commande** pour **lancer** le serveur en **mode developpement**:
-
-```json
-npm run dev
-```
-
-Et **executer** cette **commande** pour **lancer** le serveur en **mode production**:
-
-```json
-npm start
-```
 
 ---
 
