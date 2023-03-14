@@ -1,0 +1,33 @@
+{
+	"info": {
+		"_postman_id": "9c6d9723-bec3-4329-a63d-352e42e889bc",
+		"name": "1. Routes simple",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "8920217-9c6d9723-bec3-4329-a63d-352e42e889bc"
+	},
+	"item": [
+		{
+			"name": "exemple",
+			"id": "1b131cc8-6a88-453b-8e32-08cba98dfc2d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3001/exemple",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"exemple"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
