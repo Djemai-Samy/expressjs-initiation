@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "7d3adb4c-400b-496c-8aad-7f0284387d3c",
-		"name": "3. Routes avec paramètres",
+		"name": "3. Routes-params",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_uid": "8920217-7d3adb4c-400b-496c-8aad-7f0284387d3c"
 	},
