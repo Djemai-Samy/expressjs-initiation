@@ -1,14 +1,18 @@
-# ExpressJS: Initation
+# 1/ ExpresJS: Les Middleswares
 
-## [Page officiel du cours ExpressJS: Initiation](https://djemai-samy.com/posts/0.expressjs-initiation)
+## [Page officiel du cours ExpressJS: Les Middlewares](https://djemai-samy.com/posts/3.expressjs-middlewares.article)
 
-![Image du cours: ExpressJS: Initation](https://djemai-samy.com/blog/2.programmation/2.server/4.expressjs/0.expressjs-initiation/0.expressjs-initiation.png)
+![Image du cours: ExpresJS: Les Middlewares](https://djemai-samy.com/blog/2.programmation/2.server/4.expressjs/0.expressjs-initiation/3.expressjs-middlewares/3.expressjs-middlewares.png)
 
 La branche 'main' contient le code de départ de chaque chapitre de la série de cours.
 
-Au cours de ce programme, vous allez apprendre les concepts clés d'ExpressJS.
+Le middleware est l'un des éléments clés dans le développement d'applications web avec ExpressJS.
 
-Vous allez découvrir comment installer et configurer une application ExpressJS, créer des routes, gérer les données, gérer les erreurs, envoyer des réponses HTTP et utiliser les middlewares.
+Il permet de traiter les requêtes HTTP et les réponses en ajoutant des fonctionnalités supplémentaires à l'application.
+
+Vous découvrirez comment créer des middlewares personnalisés pour ExpressJS, ainsi que les middlewares intégrés d'ExpressJS tels que la gestion de fichiers statiques, la gestion du corps des requêtes HTTP et l'upload de fichiers.
+
+---
 
 ## Programme
 
@@ -17,6 +21,8 @@ Vous allez découvrir comment installer et configurer une application ExpressJS,
 1. [ExpressJS: Introduction](https://djemai-samy.com/posts/1.expressjs-introduction.article)
 2. [ExpressJS: Les Routes](https://djemai-samy.com/posts/2.expressjs-routes.article)
 3. [ExpressJS: Les middlewares](https://djemai-samy.com/posts/3.react-middlewares.article)
+
+---
 
 ## Branches sur GitHub
 
@@ -40,40 +46,36 @@ Chaque article à comme point de départ la branche **main** et possèdent tous 
 
 ---
 
-## Objectifs
-
-L'**objectif** de ce **tutoriel** est de vous **apprendre** à **créer** une **application ExpressJS fonctionnelle**.
-
-Vous allez **apprendre** à **utiliser** les **principes fondamentaux** de **ExpressJS**, notamment la **gestion des routes**, la **gestion et manipulation des données de requête**, **La gestion d'erreurs**...
-
-À la fin de ce tutoriel, vous serez en mesure de :
-
-- **Configurer** et **lancer** une application avec **ExpressJS**.
-- **Gérer** les **routes** pour executer la **logique corresepondante**.
-- **Gérer** et **manipuler** les données des **reqûetes**.
-- **Envoyer** des **réponse** approprié sous différents **format**.
-- **Utiliser des middleware intégrés et externes** pour **ajouter** et **ameliorer** les **fonctionnalités** de votre application.
-
----
-
 ## Mise en place de l'environnement
 
-Vous pouvez commencer à suivre le cours en clonant le branche **main**:
+Vous pouvez commencer à suivre le cours en clonant le branche **main** avec GitHub:
 
 ```bash
 git clone https://github.com/Djemai-Samy/expressjs-initiation.git
 ```
 
+ou avec GitLab:
+
+```bash
+git clone https://gitlab.com/tutoriels-dev/expressjs/expressjs-initiation/1.expressjs-initiation/-/tree/main
+```
+
+Une fois cloné, vous pouver vous déplacez dans la nouveau dossier:
+
 ```bash
 cd ./expressjs-initiation
 ```
+
+Installer les dépendances:
 
 ```bash
 npm install
 ```
 
+Et lancé le serveur en mode développement
+
 ```bash
 npm run dev
 ```
 
-## Happy Coding
+---
