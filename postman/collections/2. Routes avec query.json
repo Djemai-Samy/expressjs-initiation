@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "074718e4-c7cf-4c48-b893-ef2ec155f950",
+		"name": "2. Routes avec query",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "8920217-074718e4-c7cf-4c48-b893-ef2ec155f950"
+	},
+	"item": [
+		{
+			"name": "Hello John!",
+			"id": "83a86e54-6946-404c-b891-a61b877e99c8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3001/hello?name=john",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"hello"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "john"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hello Jane!",
+			"id": "68f883e1-cd00-4c79-863b-5aac6e276ec8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3001/hello?name=Jane",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"hello"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Jane"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hello Sam!",
+			"id": "268304fd-d490-4d86-8f22-fac422bc03a9",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:3001/hello?name=Sam",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"hello"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Sam"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
