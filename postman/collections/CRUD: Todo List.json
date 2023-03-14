@@ -1,0 +1,301 @@
+{
+	"info": {
+		"_postman_id": "ba78243d-fb44-4954-8a03-a10c8f362cc3",
+		"name": "CRUD: Todo List",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "8920217-ba78243d-fb44-4954-8a03-a10c8f362cc3"
+	},
+	"item": [
+		{
+			"name": "CREATE: Ajouter une tâche",
+			"item": [
+				{
+					"name": "SUCCESS: Ajouter une tâche",
+					"id": "117b6e37-73ee-4baf-8f79-040e2a75a625",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/tasks?task=une Tache",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "task",
+									"value": "une Tache"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ERROR: Query manquant",
+					"id": "e13bd7b1-bd59-424f-9a03-5f7898123dd9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/tasks?task=une Tache",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tasks"
+							],
+							"query": [
+								{
+									"key": "task",
+									"value": "une Tache"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "f028252f-1896-4b5f-bffb-4478209d28d9"
+		},
+		{
+			"name": "READ: Récuperer la liste de tâches",
+			"item": [
+				{
+					"name": "SUCCESS: Ajouter une tâche",
+					"id": "74c222f5-39f8-47c5-a621-33b9011f36e0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "1afa3970-4fe5-4fe4-9a25-99f2184f2dc0"
+		},
+		{
+			"name": "UPDATE: Mettre â jour une tâche",
+			"item": [
+				{
+					"name": "SUCCESS: Mettre à jour une tâche",
+					"id": "b12876fd-2d5b-46bd-ad93-4bae57184d70",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/tasks/3?task=Une tache modifiée",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tasks",
+								"3"
+							],
+							"query": [
+								{
+									"key": "task",
+									"value": "Une tache modifiée"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ERROR: Query manquant",
+					"id": "b4af2179-acc6-4de6-9013-a497df03911e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/tasks/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tasks",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ERROR: ID invalide",
+					"id": "c8365c42-35e3-4860-a892-5d899cdaacca",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/tasks/invalid?task=Une tache modifiée",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tasks",
+								"invalid"
+							],
+							"query": [
+								{
+									"key": "task",
+									"value": "Une tache modifiée"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ERROR: Tache introuvable",
+					"id": "fdbfbec8-71be-4efc-b2c8-8173eed6d19a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/tasks/1000000?task=Une tache modifiée",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tasks",
+								"1000000"
+							],
+							"query": [
+								{
+									"key": "task",
+									"value": "Une tache modifiée"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "817fca7b-b588-458f-a942-e92b8585adee"
+		},
+		{
+			"name": "DELETE: Supprimer une tâche",
+			"item": [
+				{
+					"name": "SUCCESS: Mettre à jour une tâche",
+					"id": "b1a67737-ba16-4e1c-8e25-0ebea30f1fc8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/tasks/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tasks",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ERROR: ID invalide",
+					"id": "23abe5d6-3a69-4ff8-a9ca-d7141b6bf20d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/tasks/invalid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tasks",
+								"invalid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ERROR: Tache introuvable",
+					"id": "2fae9fe6-d357-439a-9aaf-cee26fc4f4c9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/tasks/1000000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"tasks",
+								"1000000"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "860f8113-191f-467c-a84f-2b398545a267"
+		}
+	]
+}

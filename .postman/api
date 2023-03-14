@@ -8,6 +8,7 @@ rootDirectory = postman/collections
 files[] = {"id":"8920217-9c6d9723-bec3-4329-a63d-352e42e889bc","path":"1. Routes simple.json","metaData":{}}
 files[] = {"id":"8920217-074718e4-c7cf-4c48-b893-ef2ec155f950","path":"2. Routes avec query.json","metaData":{}}
 files[] = {"id":"8920217-7d3adb4c-400b-496c-8aad-7f0284387d3c","path":"3. Routes avec paramètres.json","metaData":{}}
+files[] = {"id":"8920217-ba78243d-fb44-4954-8a03-a10c8f362cc3","path":"CRUD: Todo List.json","metaData":{}}
 
 [relations.collections.metaData]
 
