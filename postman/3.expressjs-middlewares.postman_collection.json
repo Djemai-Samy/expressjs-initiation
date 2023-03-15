@@ -1,0 +1,511 @@
+{
+	"info": {
+		"_postman_id": "4c57cde3-9332-441e-bc64-8cc446da25de",
+		"name": "3.expressjs-middlewares",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8920217"
+	},
+	"item": [
+		{
+			"name": "1. CRUD: Todo List",
+			"item": [
+				{
+					"name": "CREATE: Ajouter une tache",
+					"item": [
+						{
+							"name": "SUCCESS: Ajouter une tâche",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Réponse possède le tableau tasks\", function () {\r",
+											"  \r",
+											"    pm.response.to.have.body({tasks:[\"Aller manger.\", \"Aller étudier.\", \"Aller dormir\", \"Une Tache\"]})\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/tasks?task=Une Tache",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"tasks"
+									],
+									"query": [
+										{
+											"key": "task",
+											"value": "Une Tache"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ERROR: Query manquant",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/tasks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "READ: Récuperer la liste",
+					"item": [
+						{
+							"name": "SUCCESS: Liste des tâches",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/tasks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"tasks"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UPDATE: Mettre à jour une tache",
+					"item": [
+						{
+							"name": "SUCCESS: Mettre à jour une tâche",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/tasks/3?task=Une tâche modifiée",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"tasks",
+										"3"
+									],
+									"query": [
+										{
+											"key": "task",
+											"value": "Une tâche modifiée"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ERROR: Query task manquant",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/tasks/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"tasks",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ERROR: ID invalide",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/tasks/invalid?task=Une tâche modifiée",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"tasks",
+										"invalid"
+									],
+									"query": [
+										{
+											"key": "task",
+											"value": "Une tâche modifiée"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ERROR: ID introuvable",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/tasks/10000?task=Une tâche modifiée",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"tasks",
+										"10000"
+									],
+									"query": [
+										{
+											"key": "task",
+											"value": "Une tâche modifiée"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE: Supprimer une tâche",
+					"item": [
+						{
+							"name": "SUCCESS: Supprimer  une tâche",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/tasks/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"tasks",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ERROR: ID invalide",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/tasks/invalid",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"tasks",
+										"invalid"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ERROR: ID introuvable",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3001/tasks/10000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"tasks",
+										"10000"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "2/ Fichiers statiques",
+			"item": [
+				{
+					"name": "Page HTML",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Le style CSS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/style.css",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"style.css"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Le style CSS Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/script.js",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"script.js"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3/ Requête avec Body",
+			"item": [
+				{
+					"name": "Bonjour Doe John!",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\":\"Doe\",\r\n    \"prenom\":\"John\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/bonjour",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"bonjour"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bonjour Doe Jane!",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nom",
+									"value": "Doe",
+									"type": "text"
+								},
+								{
+									"key": "prenom",
+									"value": "Jane",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/bonjour",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"bonjour"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4/ Uploader des fichiers",
+			"item": [
+				{
+					"name": "Uploader L'image 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Pro/Djemai-Samy/Contenus/blog/2.programmation/2.server/4.expressjs/1.expressjs-initiation/images-pour-testes/expressjs-initiation.svg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Uploader L'image 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/D:/Pro/Djemai-Samy/Contenus/blog/2.programmation/2.server/4.expressjs/1.expressjs-initiation/images-pour-testes/expressjs-middlewares.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Récuperer l'image 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/images/expressjs-initiation.svg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"images",
+								"expressjs-initiation.svg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Récuperer l'image 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/images/expressjs-middlewares.png",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"images",
+								"expressjs-middlewares.png"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
